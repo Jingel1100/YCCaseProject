@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron" id="image">
+    <img src="~/images/EquineHeader.jpg" style="width: 100%;"/>
+</div> 
+<div class="col-md-1">
+    <br />
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <h2>Application uses</h2>
+        <ul>
+            <li>Using ASP.NET Core 2.1 MVC</li>
+            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+            <li>Implementing four C# written libraries (DLL's)</li>
+            <li>&amp; three matching databases to support our microservices</li>
+        </ul>
+    </div>
+    
+    <div class="col-md-5" style="padding-left: 50px; padding-right: 50px;">
+        <h2><strong style="font-family: Verdana; color: saddlebrown; font-size:larger;">Webstore MVC</strong></h2>
+        <p>
+            Webstore MVC is one of the most populair and modern stores for only the very best Equine animals &amp; gear.
+            Name it and you can find it here. Dream of it and Webstore MVC will make your Equine dream come true!
+        </p>
+        <ul style="list-style-type:none">
+            <li>
+                <form>
+                    <button asp-action="Index" asp-controller="Products">Go to the Webstore...</button>
+                </form>
+            </li>
+        </ul>
+        <br />
+        <h2>My shopping cart</h2>
+        <p>
+            Order products in only a single click and get exited by the stunning and instant delivery! Only at WebstoreMVC
+            you wil find the greatest services of instant delivery, instant payment and no worries about money.
+        </p>
+        <ul>
+            <li style="list-style-type:none">
+                <form>
+                    <button asp-action="ShoppingCart" asp-controller="Products">To my dear shopping cart</button>
+                </form>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>

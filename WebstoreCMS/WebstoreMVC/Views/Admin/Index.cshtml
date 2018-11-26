@@ -1,0 +1,155 @@
+﻿
+@model WebstoreMVC.Models.ApplicationUserListViewModel
+
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>Adjust signed roles</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoleNames)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Admin_Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Storeowner_Role)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListItems)
+            {
+                @if (item.RoleName != "Customer")
+                {   <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleName)
+                        </td>
+                        <td>
+                            <!-- Add | Remove Admin button -->
+                            @if (item.RoleName == "Admin")
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="RemoveRoles" asp-route-id="@item.UserId"> Remove </a>
+                                </form>
+                            }
+                            else
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="RemoveAdminRole" asp-route-id="@item.UserId"> Add </a>
+                                </form>
+                            }
+                        </td>
+                        <td>
+                            <!-- Add | Remove StoreOwner button -->
+                            @if (item.RoleName == "StoreOwner")
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="RemoveRoles" asp-route-id="@item.UserId"> Remove </a>
+                                </form>
+                            }
+                            else
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="AddStoreOwnerRole" asp-route-id="@item.UserId"> Add </a>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+
+                }
+                
+            }
+        </tbody>
+    </table>
+    <partial name="../Shared/_PagingPartial.cshtml" />
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoleNames)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Admin_Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Storeowner_Role)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.ListItems)
+            {   @if (item.RoleName == "Customer" && item.UserName != "Storeowner@webstore.nl")
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleName)
+                        </td>
+                        <td>
+                            <!-- Add | Remove Admin button -->
+                            @if (item.RoleName == "Admin")
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="RemoveRoles" asp-route-id="@item.UserId"> Remove </a>
+                                </form>
+                            }
+                            else
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="RemoveAdminRole" asp-route-id="@item.UserId"> Add </a>
+                                </form>
+                            }
+                        </td>
+                        <td>
+                            <!-- Add | Remove StoreOwner button -->
+                            @if (item.RoleName == "StoreOwner")
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="RemoveRoles" asp-route-id="@item.UserId"> Remove </a>
+                                </form>
+                            }
+                            else
+                            {
+                                <form>
+                                    <a asp-controller="Admin" asp-action="AddStoreOwnerRole" asp-route-id="@item.UserId"> Add </a>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+
+             }
+
+        </tbody>
+    </table>
+    <partial name="../Shared/_PagingPartial.cshtml" />
+
+}
+
+else
+{
+    <p>Only Admin can acces this page.</p>
+}

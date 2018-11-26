@@ -1,0 +1,63 @@
+﻿@model WebstoreMVC.Models.OrderListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Order Index</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderedProducts)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StatusDescription)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListItems)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderedProducts)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusDescription)
+                    </td>
+                    <td>
+                        <a asp-action="CancelOrder" asp-route-id="@item.Id">Cancel</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <partial name="../Shared/_PagingPartial.cshtml" />
+}
+ else
+ {
+     <p>This page is only accesable if you're signed in</p>
+ }

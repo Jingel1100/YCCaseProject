@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebstoreMVC", "WebstoreMVC\WebstoreMVC.csproj", "{0F8602BF-FFC9-41B9-A0C2-7A8641E55B5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceLibrary", "FinanceLibrary\FinanceLibrary.csproj", "{F9401767-57E8-4827-893E-1F96C72938BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsManagementSystemLibrary", "ProductsManagementSystem\ProductsManagementSystemLibrary.csproj", "{CA754EC5-4E28-44FB-9E8A-FE429F7C86D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliverySystemLibrary", "DeliverySystemLibrary\DeliverySystemLibrary.csproj", "{1C664A08-3777-426D-9110-D06242719A21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartLibrary", "ShoppingCartLibrary\ShoppingCartLibrary.csproj", "{3956E677-12C9-4D78-B61D-A6018E65A61F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F8602BF-FFC9-41B9-A0C2-7A8641E55B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8602BF-FFC9-41B9-A0C2-7A8641E55B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8602BF-FFC9-41B9-A0C2-7A8641E55B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8602BF-FFC9-41B9-A0C2-7A8641E55B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9401767-57E8-4827-893E-1F96C72938BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9401767-57E8-4827-893E-1F96C72938BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9401767-57E8-4827-893E-1F96C72938BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9401767-57E8-4827-893E-1F96C72938BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA754EC5-4E28-44FB-9E8A-FE429F7C86D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA754EC5-4E28-44FB-9E8A-FE429F7C86D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA754EC5-4E28-44FB-9E8A-FE429F7C86D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA754EC5-4E28-44FB-9E8A-FE429F7C86D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C664A08-3777-426D-9110-D06242719A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C664A08-3777-426D-9110-D06242719A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C664A08-3777-426D-9110-D06242719A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C664A08-3777-426D-9110-D06242719A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3956E677-12C9-4D78-B61D-A6018E65A61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3956E677-12C9-4D78-B61D-A6018E65A61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3956E677-12C9-4D78-B61D-A6018E65A61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3956E677-12C9-4D78-B61D-A6018E65A61F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4FC8D7E-1722-46E1-A7CD-C3D81D7673B7}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/wjhaertlein
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WebstoreMVC\\WebstoreMVC.csproj
+		SccProjectName1 = WebstoreMVC
+		SccLocalPath1 = WebstoreMVC
+		SccProjectUniqueName2 = FinanceLibrary\\FinanceLibrary.csproj
+		SccProjectName2 = FinanceLibrary
+		SccLocalPath2 = FinanceLibrary
+		SccProjectUniqueName3 = DeliverySystemLibrary\\DeliverySystemLibrary.csproj
+		SccProjectName3 = DeliverySystemLibrary
+		SccLocalPath3 = DeliverySystemLibrary
+		SccProjectUniqueName4 = ProductsManagementSystem\\ProductsManagementSystemLibrary.csproj
+		SccProjectName4 = ProductsManagementSystem
+		SccLocalPath4 = ProductsManagementSystem
+		SccProjectUniqueName5 = ShoppingCartLibrary\\ShoppingCartLibrary.csproj
+		SccProjectName5 = ShoppingCartLibrary
+		SccLocalPath5 = ShoppingCartLibrary
+	EndGlobalSection
+EndGlobal

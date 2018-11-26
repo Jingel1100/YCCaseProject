@@ -1,0 +1,55 @@
+﻿@model FinanceLibrary.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+@if (User.IsInRole("StoreOwner") || User.IsInRole("Admin"))
+{
+
+    <div>
+        <h4>Order</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OrderNumber)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderedProducts)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OrderedProducts)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalPrice)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.StatusDescription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StatusDescription)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+else
+{
+    <p>This page is only accesable by a StoreOwner or Admin</p>
+}

@@ -1,0 +1,71 @@
+﻿@model WebstoreMVC.Models.ProductListViewModel
+
+@{
+    ViewData["Title"] = "Browse your favourite Equine animal and gear:";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+@if (User.IsInRole("Admin") | User.IsInRole("StoreOwner"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListItems)
+        {
+            <tr>
+                <td>
+                    <div class="Image">
+                        <img height="40" alt="ProductImage" src="~/File?id=@item.Image.FileId" />
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    <a asp-action="Buy" asp-route-id="@item.Id"> Buy </a>
+                    |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    @if (Model.AllowEdit)
+                    {
+                        @:|
+                        <a asp-action="Edit" asp-route-id="@item.Id"> Edit </a>
+                        @:|
+                        <a asp-action="Delete" asp-route-id="@item.Id"> Delete </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<partial name="../Shared/_PagingPartial.cshtml" />
